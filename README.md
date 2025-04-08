@@ -1,24 +1,21 @@
 # MCP-JaCoCo
-MCP-JaCoCo is a MCP server that reads JaCoCo code coverage reports and returns them in LLM-friendly formats.
+MCP-JaCoCo is a server tool that converts JaCoCo code coverage reports into formats optimized for Large Language Models (LLMs), making AI-driven analysis easier and more effective.
 
-# Motivation
-As AI and Large Language Models (LLMs) become increasingly integral to software development, there is a growing need to bridge the gap between traditional code coverage reporting and AI-assisted analysis. Traditional JaCoCo coverage report formats, while human-readable, aren't optimized for LLM consumption and processing.
+# Why It Matters
+As AI and LLMs play a bigger role in software development, traditional code coverage reports—like those from JaCoCo—need a makeover. While great for humans, their XML format isn’t ideal for AI tools to process or analyze. MCP-JaCoCo bridges this gap by transforming these reports into LLM-friendly formats, unlocking powerful benefits for development teams:
 
-MCP-JaCoCo addresses this challenge by transforming JaCoCo coverage reports into LLM-friendly formats. This transformation enables AI models to better understand, analyze, and provide insights about code coverage results, making it easier to:
+- Quick, meaningful summaries of code coverage
+- Easy identification of untested or poorly tested code
+- Smart suggestions for new test cases
+- Streamlined AI-assisted test planning
+- Automated documentation of coverage results
+With MCP-JaCoCo, teams can tap into AI’s full potential, boosting efficiency and insight in testing workflows.
 
-- Generate meaningful coverage summaries and insights
-- Identify areas with insufficient test coverage
-- Suggest potential test cases for uncovered code
-- Enable more effective AI-assisted test planning
-- Facilitate automated coverage documentation generation
-
-By optimizing coverage reports for LLM consumption, MCP-JaCoCo helps development teams leverage the full potential of AI tools in their testing workflow, leading to more efficient and intelligent code coverage analysis and test planning.
-
-# Problems Solved
-- **Format Complexity**: Traditional JaCoCo XML reports are complex and not optimized for AI consumption
-- **Data Accessibility**: Coverage data is scattered across different metrics and requires parsing
-- **Analysis Efficiency**: Manual coverage analysis is time-consuming and prone to oversight
-- **Integration Challenges**: Raw coverage data is difficult to integrate with AI-powered tools
+# What It Solves
+- **Complex Formats**: Simplifies JaCoCo’s dense XML reports for AI use
+- **Scattered Data**: Pulls coverage metrics into one accessible place
+- **Slow Analysis**: Cuts down on time-consuming manual reviews
+- **Integration Hurdles**: Makes raw data play nicely with AI tools
 
 # Key Features
 - **Smart Conversion**: Transforms JaCoCo XML reports into LLM-friendly JSON format
@@ -28,7 +25,7 @@ By optimizing coverage reports for LLM consumption, MCP-JaCoCo helps development
 - **Customizable Analysis**: Filter coverage data by specific metrics of interest
 
 # Installation
-To install mcp-jacoco-reporter using uv:
+Install MCP-JaCoCo using uv with this configuration:
 ```
 {
   "mcpServers": {
@@ -59,7 +56,6 @@ To install mcp-jacoco-reporter using uv:
 - Reads JaCoCo XML report and returns coverage data in JSON format
 - Input:
   - jacoco_report_path: Path to JaCoCo report path
-  - covered_types: List of coverage types to include (optional)
 - Return:
   - String, formatted JSON data containing coverage metrics
 
