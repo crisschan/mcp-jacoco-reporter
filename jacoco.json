@@ -1,0 +1,72 @@
+[
+    {
+        "sourcefile": "PasswordUtil.java",
+        "package": "com/cicc/ut/util",
+        "lines": {
+            "nocovered": [],
+            "partiallycovered": []
+        },
+        "branch": {
+            "nocovered": [],
+            "partiallycovered": []
+        }
+    },
+    {
+        "sourcefile": "UserServiceImpl.java",
+        "package": "com/cicc/ut/service/impl",
+        "lines": {
+            "nocovered": [
+                33,
+                67,
+                69,
+                71,
+                72
+            ],
+            "partiallycovered": []
+        },
+        "branch": {
+            "nocovered": [
+                67
+            ],
+            "partiallycovered": [
+                32
+            ]
+        }
+    },
+    {
+        "sourcefile": "Constants.java",
+        "package": "com/cicc/ut/constants",
+        "lines": {
+            "nocovered": [],
+            "partiallycovered": []
+        },
+        "branch": {
+            "nocovered": [],
+            "partiallycovered": []
+        }
+    },
+    {
+        "sourcefile": "AuthException.java",
+        "package": "com/cicc/ut/exceptions",
+        "lines": {
+            "nocovered": [],
+            "partiallycovered": []
+        },
+        "branch": {
+            "nocovered": [],
+            "partiallycovered": []
+        }
+    },
+    {
+        "sourcefile": "UserService.java",
+        "package": "com/cicc/ut/service",
+        "lines": {
+            "nocovered": [],
+            "partiallycovered": []
+        },
+        "branch": {
+            "nocovered": [],
+            "partiallycovered": []
+        }
+    }
+]
