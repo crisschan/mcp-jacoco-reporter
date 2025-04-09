@@ -55,7 +55,7 @@ Install MCP-JaCoCo using uv with this configuration:
 
 - Reads JaCoCo XML report and returns coverage data in JSON format
 - Input:
-  - jacoco_report_path: Path to JaCoCo report path
+  - jacoco_xmlreport_path: Path to JaCoCo xml report path(jacoco.xml)
 - Return:
   - String, formatted JSON data containing coverage metrics
 

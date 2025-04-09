@@ -1,10 +1,17 @@
 import xml.etree.ElementTree as ET
 import json
-
+import os
 class JaCoCoReport:
-    def __init__(self, jacoco_report_path:str,covered_types:list = ['nocovered', 'partiallycovered', 'fullcovered']):
-        self.tree = ET.parse(jacoco_report_path+"/jacoco.xml")
-        self.root = self.tree.getroot()
+    def __init__(self, jacoco_xmlreport_path:str,covered_types:list = ['nocovered', 'partiallycovered', 'fullcovered']):
+        if not os.path.isfile(jacoco_xmlreport_path):
+            raise FileNotFoundError(f"The file '{jacoco_xmlreport_path}' does not exist or is not a valid file.")
+        
+        try:
+            self.tree = ET.parse(jacoco_xmlreport_path)
+            self.root = self.tree.getroot()
+        except ET.ParseError as e:
+            raise ValueError(f"Failed to parse the XML file: {e}")
+        
         self.covered_types = covered_types
     def jacoco_to_json(self):
         data = self.__parse_jacoco_xml()
@@ -53,5 +60,5 @@ class JaCoCoReport:
 
         return result
 if __name__ == "__main__":
-    jac=JaCoCoReport('/Users/crisschan/workspace/pyspace/mcp-jacoco-reporter',covered_types = ['nocovered', 'partiallycovered'])
+    jac=JaCoCoReport('/Users/crisschan/workspace/pyspace/mcp-jacoco-reporter/jacoco.xml',covered_types = ['nocovered', 'partiallycovered'])
     print(jac.jacoco_to_json())
