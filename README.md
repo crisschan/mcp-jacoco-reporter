@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/crisschan-mcp-jacoco-reporter-badge.png)](https://mseep.ai/app/crisschan-mcp-jacoco-reporter)
+
 # MCP-JaCoCo
 MCP-JaCoCo is a server tool that converts JaCoCo code coverage reports into formats optimized for Large Language Models (LLMs), making AI-driven analysis easier and more effective.
 
