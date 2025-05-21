@@ -8,7 +8,7 @@ MCP_SERVER_NAME = "mcp-jacoco-reporter-server"
 mcp= FastMCP(MCP_SERVER_NAME)
 
 if "COVERED_TYPES" not in os.environ:
-    os.environ["COVERED_TYPES"] = "no"
+    os.environ["COVERED_TYPES"] = "nocovered,partiallycovered,fullcovered"
 
 COVERED_TYPES = os.environ["COVERED_TYPES"].split(",")
 

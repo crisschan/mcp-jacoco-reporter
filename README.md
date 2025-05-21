@@ -1,6 +1,8 @@
 # MCP-JaCoCo
 MCP-JaCoCo is a server tool that converts JaCoCo code coverage reports into formats optimized for Large Language Models (LLMs), making AI-driven analysis easier and more effective.
 
+For details on generating the `jacoco.xml` report, please refer to the [official JaCoCo documentation](https://www.jacoco.org/jacoco/trunk/doc/).
+
 # Why It Matters
 As AI and LLMs play a bigger role in software development, traditional code coverage reports—like those from JaCoCo—need a makeover. While great for humans, their XML format isn’t ideal for AI tools to process or analyze. MCP-JaCoCo bridges this gap by transforming these reports into LLM-friendly formats, unlocking powerful benefits for development teams:
 
@@ -37,7 +39,7 @@ Install MCP-JaCoCo using uv with this configuration:
         "mcp[cli]",
         "mcp",
         "run",
-        "/Users/crisschan/workspace/pyspace/mcp-jacoco-reporter/mcp-jacoco-reporter-server.py"
+        "./mcp-jacoco-reporter-server.py"
       ],
       "env": {
         "COVERED_TYPES": "nocovered, partiallycovered, fullcovered"
@@ -133,4 +135,28 @@ Example output format:
         }
     }
 ]
+```
+
+# CLI Usage
+The `main.py` script provides a command-line interface to generate the JSON report directly.
+
+**Usage:**
+```bash
+python main.py <path_to_jacoco.xml> [--covered-types <types>]
+```
+
+**Arguments:**
+-   `path_to_jacoco.xml`: (Required) The path to your JaCoCo XML report file.
+-   `--covered-types`: (Optional) A comma-separated string of coverage types to include in the report. Valid types are `nocovered`, `partiallycovered`, and `fullcovered`. 
+    If omitted, the default is `"nocovered,partiallycovered,fullcovered"`.
+
+**Example:**
+To process a JaCoCo report and include only 'not covered' and 'partially covered' lines/branches:
+```bash
+python main.py /path/to/your/project/target/site/jacoco/jacoco.xml --covered-types "nocovered,partiallycovered"
+```
+
+To process with default covered types:
+```bash
+python main.py /path/to/your/project/target/site/jacoco/jacoco.xml
 ```
